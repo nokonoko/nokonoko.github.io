@@ -18,17 +18,20 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Yeet • Nekunekus Blog
-email: neku@pomf.se
+title: Yeet - Nekunekus Blog
 description: >- # this means to ignore newlines until "baseurl:"
-  Nekunekus personal blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.yeet.nu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: nekunekus
-github_username:  nokonoko
+author:
+  name: nekunekus
+  email: "neku@pomf.se"
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/nokonoko" }
+    - { platform: twitter, user_url: "https://twitter.com/nekunekus" }
 
 # Build settings
-theme: minima
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
 

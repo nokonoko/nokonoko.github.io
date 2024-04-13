@@ -1,0 +1,52 @@
+---
+---
+
+@import "minima/skins/{{ site.minima.skin | default: 'solarized-light' }}",
+"minima/initialize";
+
+/** Wrapper */
+.wrapper {
+    max-width: calc(1200px - (30px));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media screen and (min-width: 300px) {
+    .wrapper {
+        max-width: calc(1200px - (30px * 2));
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+
+@media screen and (min-width: 300px) {
+    .footer-col-wrapper {
+        display: none;
+        text-align: center;
+    }
+}
+
+.highlight {
+    margin: auto;
+    width: fit-content;
+}
+
+code {
+    font-size: calc(0.2rem + 0.8vw);
+}
+
+.site-header {
+    text-align: center;
+    display: inline-flex;
+}
+
+.post-content {
+    text-align: center;
+}
+
+.page-content {
+    text-align: center;
+}
