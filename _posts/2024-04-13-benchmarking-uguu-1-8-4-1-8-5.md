@@ -7,6 +7,7 @@ title:  "Benchmarking Uguu 1.8.4 & 1.8.5"
 ```
 Uguu V1.8.4 using SQLite.
 MacBook Pro M1 2020, 16GB RAM, 256GB SOC-STORAGE, Sonoma 14.4.1.
+Test file size: 1.97MB.
 PHPBench (1.2.15) running benchmarks...
 with PHP version 8.3.6, xdebug ❌, opcache ❌
 
@@ -40,6 +41,7 @@ Subjects: 1, Assertions: 0, Failures: 0, Errors: 0
 ```
 Uguu V1.8.5 using SQLite.
 MacBook Pro M1 2020, 16GB RAM, 256GB SOC-STORAGE, Sonoma 14.4.1.
+Test file size: 1.97MB.
 PHPBench (1.2.15) running benchmarks...
 with PHP version 8.3.6, xdebug ❌, opcache ❌
 
