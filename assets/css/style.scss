@@ -26,6 +26,7 @@
     .footer-col-wrapper {
         display: none;
         text-align: center;
+        -webkit-align-content: center;
     }
 }
 
@@ -38,15 +39,12 @@ code {
     font-size: calc(0.2rem + 0.6vw);
 }
 
-.site-header {
-    text-align: center;
-    display: inline-flex;
-}
-
 .post-content {
     text-align: center;
+    -webkit-align-content: center;
 }
 
 .page-content {
     text-align: center;
+    -webkit-align-content: center;
 }
