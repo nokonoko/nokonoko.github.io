@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Fix HPE Proliant DL120 G7 to run on Ubuntu 24.04 LTS"
+title:  "Fix HPE ProLiant DL120 G7 to run on Ubuntu 24.04 LTS"
 ---
 
 ## The problem
-When trying to run Ubuntu 24.04 LTS on a HPE Proliant DL120 G7 with a HP Smart Array P410 Controller for RAID
+When trying to run Ubuntu 24.04 LTS on a HPE ProLiant DL120 G7 server with a HP Smart Array P410 Controller for RAID
 you might end up with the following errors, and a frozen boot.
 
 ![Ubuntu 24.04 error](https://blog.yeet.nu/img/2024-08-08-hpe-proliant-dl120-g7-ubuntu-24-04-fix/img-1.png)
