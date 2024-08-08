@@ -18,9 +18,20 @@ Buffer I/O error on device sdaX, lost async page write
 ```
 
 ## How to fix it
-Boot into recovery on the previous kernel (5.15), or via a Live CD.
+Hold shift before the Ubuntu boot starts, in the advanced Grub menu hover over your
+current kernel and hit `e`, find the section with something similar to this:
+```
+linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash
+```
 
-Edit `/etc/default/grub`, and change `GRUB_CMDLINE_LINUX_DEFAULT` to the following:
+And modify it to something like this:
+```
+linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1
+```
+
+Then hit `CTRL+X` to boot with those parameters.
+
+Once booted we need to make these changes permanent by editing `/etc/default/grub`, and change `GRUB_CMDLINE_LINUX_DEFAULT` to the following:
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1"
 ```
