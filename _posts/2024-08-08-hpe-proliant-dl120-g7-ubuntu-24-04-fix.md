@@ -22,7 +22,7 @@ Boot into recovery on the previous kernel (5.15), or via a Live CD.
 
 Edit `/etc/default/grub`, and change `GRUB_CMDLINE_LINUX_DEFAULT` to the following:
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off intel_iommu=off intremap=off hpsa_simple_mode=1 hpsa_allow_any=1"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1"
 ```
 
 Save the file and run `update-grub` and reboot.
