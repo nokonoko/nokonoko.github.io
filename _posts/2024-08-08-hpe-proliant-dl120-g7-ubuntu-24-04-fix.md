@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Fix to run HPE Proliant DL120 G7 on Ubuntu 24.04 LTS"
+title:  "Fix HPE Proliant DL120 G7 to run on Ubuntu 24.04 LTS"
 ---
 
 ## The problem
