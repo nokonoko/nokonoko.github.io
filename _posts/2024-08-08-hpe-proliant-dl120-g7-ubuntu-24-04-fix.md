@@ -18,27 +18,22 @@ Buffer I/O error on device sdaX, lost async page write
 ```
 
 ## How to fix it
-Hold shift before the Ubuntu boot starts, in the advanced Grub menu hover over your
-current kernel and hit `e`, find the section with something similar to this:
-```
-linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash
-```
+1. Hold shift before the Ubuntu boot starts, in the advanced Grub menu hover over your current kernel and hit `e`, find the section with something similar to this:
+   ```
+   linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash
+   ```
+2. And modify it to something like this:
+   ```
+   linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1
+   ```
+3. Hit `CTRL+X` to boot with those parameters.
+4. Once booted we need to make these changes permanent by editing `/etc/default/grub`, and change `GRUB_CMDLINE_LINUX_DEFAULT` to the following:
+   ```
+   GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1"
+   ```
+5. Save the file and run `update-grub` and then reboot.
 
-And modify it to something like this:
-```
-linux   /vmlinuz-6.8.1-1005-realtime root=UUID=51e99cc3-1a4f-4aa7-be3c-1a793d20eff5 ro  quiet splash iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1
-```
-
-Then hit `CTRL+X` to boot with those parameters.
-
-Once booted we need to make these changes permanent by editing `/etc/default/grub`, and change `GRUB_CMDLINE_LINUX_DEFAULT` to the following:
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off cciss_allow_hpsa=1 intremap=off hpsa_allow_any=1"
-```
-
-Save the file and run `update-grub` and reboot.
-
-
+## Possible USB issues
 If you're also having the following issues with USB:
 ```
 [   37.667766] usb 3-1: device not accepting address 15, error -11
