@@ -26,3 +26,19 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=off cciss_allow_hpsa=1 intremap=off hpsa
 ```
 
 Save the file and run `update-grub` and reboot.
+
+
+If you're also having the following issues with USB:
+```
+[   37.667766] usb 3-1: device not accepting address 15, error -11
+[   37.667800] usb usb3-port1: attempt power cycle
+[   37.791771] usb 3-1: new full-speed USB device number 16 using uhci_hcd
+[   37.905762] usb 3-1: device descriptor read/64, error -11
+[   38.125760] usb 3-1: device descriptor read/64, error -11
+[   38.341784] usb 3-1: new full-speed USB device number 17 using uhci_hcd
+[   38.455768] usb 3-1: device descriptor read/64, error -11
+[   38.677775] usb 3-1: device descriptor read/64, error -11
+[   38.779806] usb usb3-port1: unable to enumerate USB device
+```
+
+You can additionally add `usbcore.old_scheme_first=1`.
